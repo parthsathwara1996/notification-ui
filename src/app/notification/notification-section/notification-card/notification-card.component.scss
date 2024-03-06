@@ -1,0 +1,151 @@
+@import "../../../../mixins.scss";
+
+.notification-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 10px 20px 10px;
+  box-shadow: 0px 0px 10px 0px #0000002B;
+  background: #FFFFFF;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+
+  &__top,
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  &__middle {
+    text-align: left;
+    padding: 10px 0;
+    max-width: 510px;
+    margin-left: 10px;
+  }
+
+  &__top-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__top-left span {
+    padding-right: 5px;
+  }
+
+  &__top-left_text {
+
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0.0104em;
+    text-align: left;
+    color: #000000;
+
+  }
+
+  &__top-right_text {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 0.0104em;
+    text-align: right;
+
+  }
+
+  &__middle-text_unread {
+    @include card-middle-text;
+    font-weight: 700;
+  }
+
+  &__middle-text_read {
+    @include card-middle-text;
+    font-weight: 400;
+
+  }
+
+  &__bottom-left_text {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.0104em;
+    text-align: left;
+    color: #0073A4;
+
+  }
+
+  &__top-left,
+  &__top-right,
+  &__bottom-left,
+  &__bottom-right {
+    flex: 1;
+    padding: 5px;
+  }
+
+  &__top-left,
+  &__bottom-left {
+    text-align: left;
+  }
+
+  &__top-right,
+  &__bottom-right {
+    text-align: right;
+  }
+
+  &__bottom-right_read {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.0104em;
+    text-align: right;
+    color: #0073A4;
+  }
+
+  &__bottom-right_unread {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.0104em;
+    text-align: right;
+    color: #0073A4;
+  }
+
+  @media screen and (max-width: 300px) {
+    .notification-card {
+      flex-direction: column;
+    }
+
+    &__top,
+    &__bottom {
+      flex-direction: column;
+    }
+
+    &__top-left,
+    &__top-right,
+    &__bottom-left,
+    &__bottom-right {
+      flex: 1;
+      padding: 5px;
+    }
+  }
+}
+
+.message-error-red {
+  color: #CE130B;
+}
+
+.message-ok-green {
+  color: #00AE97;
+}
+
+.message-warning-orange {
+  color: #F59D58;
+}
+
+.message-info-blue {
+  color: #0073A4;
+}

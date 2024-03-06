@@ -1,0 +1,17 @@
+<div class="notification-section__wrapper row">
+    <div class="notification-section__container">
+        <div class="notification-section__container__wrapper">
+            <div class="notification-section__container__wrapper__notification-list">
+                <!-- we can use ng-container also  -->
+                <div *ngFor="let group of notifications$ | async">
+                    <div class="notification-section__notification-group">
+                        <span class="notification-section__notification-group__lable">{{ group.label }}</span>
+                    </div>
+                    <app-notification-card *ngFor="let notification of group.items"
+                        [notification]="notification"></app-notification-card>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

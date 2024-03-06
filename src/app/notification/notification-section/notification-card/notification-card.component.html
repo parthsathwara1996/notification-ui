@@ -1,0 +1,33 @@
+<div class="notification-card">
+  <div class="notification-card__top">
+    <div class="notification-card__top-left">
+      <span class="material-icons" [ngClass]="notification.iconColour">{{notification.icon}}</span>
+      <span class="notification-card__top-left_text">{{ notification.subject }}</span>
+    </div>
+    <div class="notification-card__top-right">
+      <span class="notification-card__top-right_text">{{ notification.createdTimestamp | date:'short' }}</span>
+    </div>
+  </div>
+  <div class="notification-card__middle">
+    <span
+    [ngClass]="{'notification-card__middle-text_unread': notification.status.code === statusCodeEnum.UR , 'notification-card__middle-text_read': notification.status.code === statusCodeEnum.R}">
+    {{ notification.text }}
+    </span>
+  </div>
+  <div class="notification-card__bottom">
+    <div class="notification-card__bottom-left">
+      <span class="notification-card__bottom-left_text"
+        *ngIf="notification.linkTypeCodes.includes(linkTypeCodesEnum.LCOfferEntity)"
+        (click)="routeToLink(linkTypeCodesEnum.LCOfferEntity)">View Offer</span>
+      <span class="notification-card__bottom-left_text"
+        *ngIf="notification.linkTypeCodes.includes(linkTypeCodesEnum.LCEntity)"
+        (click)="routeToLink(linkTypeCodesEnum.LCEntity)">View Letter of Credit</span>
+    </div>
+    <div class="notification-card__bottom-right">
+      <span
+        [ngClass]="{'notification-card__bottom-right_read': notification.status.code === statusCodeEnum.UR , 'notification-card__bottom-right_unread': notification.status.code === statusCodeEnum.R}"
+        (click)="onClickMarkasRead_UnRead(notification)" [ngClass]=""> {{ notification.status.code === statusCodeEnum.UR
+        ? 'Mark as Unread' : 'Mark as Read' }} </span>
+    </div>
+  </div>
+</div>

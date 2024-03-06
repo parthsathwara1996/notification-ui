@@ -1,0 +1,41 @@
+.notification-section {
+
+  &__wrapper {
+    justify-content: center;
+    display: flex;
+    padding: 40px 0px 40px 0px;
+  }
+
+  &__container {
+    width: 715px;
+
+    &__wrapper {
+      margin-bottom: 48px;
+
+      &__notification-list {
+        text-align: center;
+      }
+    }
+  }
+
+  &__notification-group {
+    display: inline-block;
+    height: 18px;
+    border-radius: 51px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background: #C4C4C4;
+    margin-bottom: 20px;
+
+    &__lable {
+      width: 49px;
+      height: 14px;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 14px;
+      letter-spacing: 0.0104em;
+      text-align: left;
+      color: #000000;
+      margin: 10px;
+    }
+  }
+}
